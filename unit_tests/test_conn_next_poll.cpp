@@ -64,6 +64,7 @@ TEST(conn_next_poll, returns_rst_recvd_timer_if_in_rst_recvd_state)
 TEST(conn_next_poll, ignores_rst_recvd_timer_if_not_in_rst_recvd_state)
 {
     Fixture f;
+    f.conn.state = ARQ_CONN_STATE_CLOSED;
     f.conn.u.rst_recvd.tmr = 7;
     arq_time_t const t = arq__conn_next_poll(&f.conn);
     CHECK_EQUAL(ARQ_TIME_INFINITY, t);

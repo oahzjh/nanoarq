@@ -1,6 +1,7 @@
 #include "replace_arq_runtime_function.h"
 #include "arq_mock_list.h"
 #include <algorithm>
+#include <iterator>
 
 // create all of the prototypes, since they aren't exposed via header file
 #define ARQ_MOCK(FUNCTION_NAME) extern void *FUNCTION_NAME##_ARQ_ORIG; extern void *FUNCTION_NAME;
